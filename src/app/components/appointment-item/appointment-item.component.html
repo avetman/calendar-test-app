@@ -1,0 +1,28 @@
+<!--<div class="appointment-item " >
+  <div class="appointment-details">
+    <div class="appointment-title">{{ appointment.title }}</div>
+    <div class="appointment-time">{{ appointment.date | date: 'mediumTime' }}</div>
+    <div class="appointment-description">{{ appointment.description }}</div>
+  </div>
+  <div class="appointment-actions">
+    <button class="edit-appointment" (click)="onEdit()">Edit</button>
+    <button class="delete-appointment" (click)="onDelete()">Delete</button>
+  </div>
+</div>-->
+
+<mat-card class="appointment-item ">
+  <mat-card-header >
+    <mat-card-title-group>
+      <mat-card-title class="appointment-title">{{ appointment.title }}</mat-card-title>
+      <mat-card-subtitle class="appointment-time">{{ appointment.date | date: 'mediumTime' }}</mat-card-subtitle>
+      <div class="appointment-description">{{ appointment.description }}</div>
+
+    </mat-card-title-group>
+
+  </mat-card-header>
+  <mat-card-actions >
+    <button mat-button class="edit-appointment" (click)="onEdit()"> <mat-icon>edit</mat-icon></button>
+    <button mat-button class="delete-appointment" (click)="onDelete()"><mat-icon>delete</mat-icon></button>
+  </mat-card-actions>
+</mat-card>
+

@@ -1,0 +1,42 @@
+<div class="calendar-container" cdkDropListGroup>
+
+  <div class="calendar-header">
+    <h2>Calendar</h2>
+  </div>
+
+  <div   class="calendar-days"   >
+
+    <div  class="calendar-day day"  *ngFor="let day of daysInMonth" id="{{day}}"    >
+
+      <div class="calendar-day-number"  (click)="onSelectedDay(day)"> {{ day }} </div>
+
+
+        <div class="appointments"
+             cdkDropList [cdkDropListData]="getAppointmentsForSelectedDay(day)"
+
+             (cdkDropListDropped)="onAppointmentDropped($event, day)"
+
+        >
+
+            <app-appointment-item
+              *ngFor="let appointment of getAppointmentsForSelectedDay(day); let i = index"
+              [appointment]="appointment"
+              id="{{appointment?.day}}"
+              [cdkDragData]="appointment"
+              (deleteAppointment)="onDeleteAppointment($event)"
+              (editAppointment)="onEditAppointment($event, i)"
+              cdkDrag
+              (cdkDragEntered)="onAppointmentDragEntered($event)"
+              (cdkDragEnded)="onAppointmentDragEnded()"
+            >
+
+
+            </app-appointment-item>
+
+
+        </div>
+
+    </div>
+  </div>
+
+</div>

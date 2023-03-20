@@ -1,0 +1,50 @@
+.appointment-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #e1f5fe;
+  cursor:move;
+}
+.appointment-title {
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+.appointment-title {
+  flex-grow: 1;
+  margin-right: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appointment-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+button {
+  margin-left: 8px;
+}
+
+
+.appointment {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: move;
+}
+
+.appointment.dragging {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+.day.hovering {
+  background-color: #e6e6e6;
+}
